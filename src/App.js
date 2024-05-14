@@ -2,13 +2,14 @@ import './App.css';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 
 //importamos los comp creados
+import Footer from './layouts/footer'
 import Mujer from './components/mujer';
 import Hombre from './components/hombre';
 import Home from './components/home';
 import Electronica from './components/electronica';
 import Register from './components/register';
 import Login from './components/login'
-import NavBarExample from './layouts/navbar';
+import NavBarHeader from './layouts/navbar';
 import SelectProduct from './components/selectProduct';
 import SearchComponent from './components/search';
 
@@ -17,7 +18,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={ <NavBarExample /> }>
+          <Route path='/' element={ <NavBarHeader /> }>
             <Route index element={ <Home /> } />
             <Route path='hombre' element={ <Hombre /> } />
             <Route path='mujer' element={ <Mujer /> } />
@@ -30,7 +31,7 @@ function App() {
           </Route>
       </Routes> 
      </BrowserRouter>
-
+    <Footer/>
     </div>
   );
 }

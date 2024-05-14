@@ -9,9 +9,9 @@ export const Product = ({ id,name, price, image }) => {
                 src={`${image}`}
                 alt=""
                 // height={100}
-                width="30%"
+                // width="30%"
               />
-            <h5>{name}</h5>
+            <h6>{name}</h6>
             <p>Precio: {price}</p>
            
             <button className="btn btn-primary" onClick={() => navigate("/product/"+id)}>Ver detalles</button>

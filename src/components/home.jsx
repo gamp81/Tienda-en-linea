@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-
+import Footer from '../layouts/footer'
 import {Product} from "./Product";
 
 import { useFetch } from '../hooks/useFetch';
@@ -45,7 +45,7 @@ const Home = () => {
     console.log("los productos",products2);
     return(
         <div>
-            {/* <Header /> */}
+          
             <h2 className="center-text">Nuevos Productos</h2>
           
             <div className='container-search'>
@@ -65,7 +65,8 @@ const Home = () => {
                
                 ))}
             </div>
-            {/* <Footer /> */}
+       
+
         </div>
     )
 }
