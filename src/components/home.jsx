@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import Footer from '../layouts/footer'
+
 import {Product} from "./Product";
 
 import { useFetch } from '../hooks/useFetch';

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useFetch } from '../hooks/useFetch';
 import {Product} from "./Product";
-import {Searchbarra} from "./searchBarra";
+
 
 const Mujer = () => {
     const {fetchResponse} = useFetch("https://fakestoreapi.com/products?limit=20");
