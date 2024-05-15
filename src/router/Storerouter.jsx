@@ -8,9 +8,12 @@ import Login from '../components/login'
 import NavBarHeader from '../layouts/navbar';
 import SelectProduct from '../components/selectProduct';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+import  {ShoppingCart}  from '../components/ShoppingCart';
+
 const Storerouter = () => {
   return (
     <BrowserRouter>
+    
     <Routes>
       <Route path='/' element={ <NavBarHeader /> }>
         <Route index element={ <Home /> } />
@@ -19,7 +22,7 @@ const Storerouter = () => {
         <Route path='electronica' element={ <Electronica /> } />
         <Route path='register' element={ <Register /> } />
         <Route path='login' element={ <Login /> } />
-       
+        <Route path="/cart" element={<ShoppingCart />} />
         <Route path='/product/:id' element={ <SelectProduct /> } />
         <Route path='*' element={ <Navigate replace to="/"/> }/>
       </Route>

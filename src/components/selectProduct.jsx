@@ -12,7 +12,7 @@ const SelectProduct = () => {
     // console.log("valor de paramvalue",paramValue);
     return(
         <div>
-            <h1>Vista ficha productos {id}</h1>
+            <h1>{fetchResponse.title}</h1>
             <div className="card-product">
             <img
                 src={`${fetchResponse.image}`}

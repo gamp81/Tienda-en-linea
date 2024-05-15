@@ -1,7 +1,22 @@
 import { Navbar, Nav, Container,NavDropdown,Form,Button  } from "react-bootstrap"
 import { Outlet, Link } from "react-router-dom"
-
+import React, { useContext } from "react";
+// import { Link } from "react-router-dom";
+import { CartContext } from "../context/ShoppingCartContext";
+import { CartIcon } from '../components/icon'
 const NavBarExample = () => {
+    const [cart, setCart] = useContext(CartContext);
+
+    const quantity = cart.reduce((acc, curr) => {
+      return acc + curr.quantity;
+    }, 0);
+  
+    const navStyles = {
+      color: "#fff",
+      listStyle: "none",
+      textDecoration: "none",
+     
+    };
     return(
        <>    
        <Navbar className="navBg" variant="dark" expand="lg">
@@ -25,8 +40,18 @@ const NavBarExample = () => {
                 Separated link
               </NavDropdown.Item>
             </NavDropdown>
+         
+                <Nav.Link  as={Link} to="/login">Login</Nav.Link>             
+                <Nav.Link as={Link} to={"/cart"} style={navStyles}>
+                <li >
+                <span className="cart-count">
+                <CartIcon />
+                {quantity}</span>
+                </li>
+                </Nav.Link>
             
-                <Nav.Link className="me-left" as={Link} to="/login">Login</Nav.Link>             
+            
+                
             </Nav>
             </Navbar.Collapse>
         </Container>
